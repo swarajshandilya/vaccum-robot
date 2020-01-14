@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+    <script src='vaccuRobo.js'></script>
+    <link rel="stylesheet" href='index.css'>
+
+</head>
+<body>
+<h2>Robo Vaccum Cleaner</h2>
+<p>The application can read commands in following format (case insensitive):
+    <ul>
+        <li>PLACE X,Y,F</li>
+        <li>MOVE</li>
+        <li>LEFT</li>
+        <li>RIGHT</li>
+        <li>REPORT</li>
+    </ul>
+</p>
+<main>
+    <div class="input-area">
+        <label for="command">Enter Command:</label>
+        <input type="text" id="command" onfocusout="inputView.processCommand(this.value)" onkeydown="if (event.keyCode == 13) inputView.processCommand(this.value);" autofocus>
+    </div>
+    <div class="content">
+         <h4>Current Status:</h4>
+
+        <p id="report"></p>
+        <button id="restart">Restart</button>
+    </div>
+    <canvas id="c" width="551" height="580"></canvas>
+</main>
+</body>
+</HTML>
